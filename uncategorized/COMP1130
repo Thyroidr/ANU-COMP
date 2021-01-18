@@ -155,7 +155,7 @@
     <link itemprop="mainEntityOfPage" href="https://thyroidr.github.io/ANU-COMP/uncategorized/COMP1130">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/ANU-COMP/images/avatar.gif">
+      <meta itemprop="image" content="/ANU-COMP/images/avatar.png">
       <meta itemprop="name" content="Ryan Wang">
       <meta itemprop="description" content="">
     </span>
@@ -285,6 +285,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryan Wang"
+      src="/ANU-COMP/images/avatar.png">
   <p class="site-author-name" itemprop="name">Ryan Wang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -299,6 +301,14 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Thyroidr" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Thyroidr" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ryanxiaowang2001@gmail.com" title="E-Mail → mailto:ryanxiaowang2001@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
   <div class="cc-license motion-element" itemprop="license">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/ANU-COMP/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
