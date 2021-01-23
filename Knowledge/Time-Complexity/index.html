@@ -119,6 +119,11 @@
     <a href="/ANU-COMP/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/ANU-COMP/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/ANU-COMP/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -201,7 +206,7 @@
       
         <p><em>Based on Introduction to Algorithms, 3rd Edition, Chapter 3</em><br><em>By Ryan Wang</em></p>
 <h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>It is often crucial to understand the efficiency of an algorithm. For example, we may have algorithms $A$ and $B$ to solve a problem. $A$ may slow but easy to implement and its implementations are likely bug-free, while $B$ is fast yet extremely difficult to implement. Knowing an exact measure of their efficiencies can help determining which one to use in different situations. In this example, the we have low demand for efficiency (small data sets), $A$ would be preferred, while $B$ would be ideal with larger data sets.</p>
-<p>We need a quantitative measurement of different situations, and that is often the size of data that we wish to process. This “size of data” is called $n$: it can refer to the number of items in knap-sack, number of data entries in excel, etc. </p>
+<p>We need a quantitative measurement of different situations, and that is often the size of data that we wish to process. This &quot;size of data&quot; is called $n$: it can refer to the number of items in knap-sack, number of data entries in excel, etc. </p>
 <a id="more"></a>
 
 <h2 id="Time-Complexity"><a href="#Time-Complexity" class="headerlink" title="Time Complexity"></a>Time Complexity</h2><p><strong>Time complexity</strong> is notation to describe how efficient an algorithm is in terms of its running time, that is, how long it would run on a computer. Depending on the circumstance, we may use one of three different types of time complexity: upperbound, asymptotic, lowerbound. In each of these cases, we use a function $f(n)$ inside a one of $O()$, $\Theta()$, and $\Omega()$. </p>
@@ -225,13 +230,13 @@
 <td>Lowerbound</td>
 </tr>
 </tbody></table>
-<h3 id="The-interior-function"><a href="#The-interior-function" class="headerlink" title="The interior function"></a>The interior function</h3><p>I will get into what “upperbound”, “asymptotic”, and “lowerbound” mean in a moment. But first, we will look at $f(n)$. These notations use the function $f(n)$ to describe the rate of growth of algorithmic runtimes. Exact algorithmic runtimes vary significantly from machine to machine, and correspondingly time complexities can only be indicative. Due to this indicative nature, the function $f(n)$ is nearly always simplified by omitting constant factors and minor terms. For example, if we know that the runtime on a machine is exactly</p>
+<h3 id="The-interior-function"><a href="#The-interior-function" class="headerlink" title="The interior function"></a>The interior function</h3><p>I will get into what &quot;upperbound&quot;, &quot;asymptotic&quot;, and &quot;lowerbound&quot; mean in a moment. But first, we will look at $f(n)$. These notations use the function $f(n)$ to describe the rate of growth of algorithmic runtimes. Exact algorithmic runtimes vary significantly from machine to machine, and correspondingly time complexities can only be indicative. Due to this indicative nature, the function $f(n)$ is nearly always simplified by omitting constant factors and minor terms. For example, if we know that the runtime on a machine is exactly</p>
 <p>$$f(n) = 5n^2 + 3n + 2$$</p>
 <p>This is generalised to most machines by simplifying to</p>
 <p>$$f(n) = n^2$$</p>
-<p>In the example above, we know definitively that the $n^2$ term grows faster than the other terms starting from very small $n$. Thus for all $n$ we really care about, it is the dominant term. We may have multiple dominant terms, especially (although not always) in algorithms where the time complexity is determined by multiple variables. One such example is with the infamous Dijkstra’s algorithm for shortest paths in Graph Theory. This algorithm has its run time determined by both the number of vertices ($|V|$) and edges ($|E|$) in the graph. Its time complexity, when implemented using a priority queue for optimisation, is<br>$$O(|E| + |V| \log |V|)$$</p>
-<h3 id="The-three-types-of-time-complexity"><a href="#The-three-types-of-time-complexity" class="headerlink" title="The three types of time complexity"></a>The three types of time complexity</h3><p>Now onto what the $O()$, $\Theta()$ and $\Omega()$ notations mean. Well, they mean what you’d expect. $O()$ gives the hard cap on the time complexity, and that an algo with $O(n^2)$ would never run higher than $n^2$ time complexity, although it could run with $n$ time complexity in certain cases. $\Omega()$ is pretty much the same except with lowerbound, while $\Theta()$ tells you both the upper and lower bounds. </p>
-<p>There is one catch though: the runtime only has to obey these bounds after some constant $c$. This constant $c$ can be any number. And thus a function running in $\Theta(n^3)$ for $n \le 1000$ and $\Theta(n^2)$ for $n &gt; 1000$ can still be said to have time complexity $\Theta(n^2)$. This is a rare example, and hardly occurs unless if you “Frankenstein” two algorithms together and have them solve for different sizes of input (I wonder why you would do that hmmm). </p>
+<p>In the example above, we know definitively that the $n^2$ term grows faster than the other terms starting from very small $n$. Thus for all $n$ we really care about, it is the dominant term. We may have multiple dominant terms, especially (although not always) in algorithms where the time complexity is determined by multiple variables. One such example is with the infamous Dijkstra&#39;s algorithm for shortest paths in Graph Theory. This algorithm has its run time determined by both the number of vertices ($|V|$) and edges ($|E|$) in the graph. Its time complexity, when implemented using a priority queue for optimisation, is<br>$$O(|E| + |V| \log |V|)$$</p>
+<h3 id="The-three-types-of-time-complexity"><a href="#The-three-types-of-time-complexity" class="headerlink" title="The three types of time complexity"></a>The three types of time complexity</h3><p>Now onto what the $O()$, $\Theta()$ and $\Omega()$ notations mean. Well, they mean what you&#39;d expect. $O()$ gives the hard cap on the time complexity, and that an algo with $O(n^2)$ would never run higher than $n^2$ time complexity, although it could run with $n$ time complexity in certain cases. $\Omega()$ is pretty much the same except with lowerbound, while $\Theta()$ tells you both the upper and lower bounds. </p>
+<p>There is one catch though: the runtime only has to obey these bounds after some constant $c$. This constant $c$ can be any number. And thus a function running in $\Theta(n^3)$ for $n \le 1000$ and $\Theta(n^2)$ for $n &gt; 1000$ can still be said to have time complexity $\Theta(n^2)$. This is a rare example, and hardly occurs unless if you &quot;Frankenstein&quot; two algorithms together and have them solve for different sizes of input (I wonder why you would do that hmmm). </p>
 <p>Once again, time complexities are only indicative, optimising a piece of code does not necessarily involve optimising its time complexity. Constant factor optimisation (improving runtime but do not changing time complexity) is in fact quite common. </p>
 
     </div>
@@ -348,8 +353,10 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/ANU-COMP/categories/">
+          
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
 </div>
@@ -359,6 +366,9 @@
       </span>
       <span class="links-of-author-item">
         <a href="mailto:ryanxiaowang2001@gmail.com" title="E-Mail → mailto:ryanxiaowang2001@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/rxw/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;rxw&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
@@ -397,7 +407,8 @@
   <span class="author" itemprop="copyrightHolder">Ryan Wang</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
+  </div><script color="255,153,102" opacity="0.7" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
 
         
 
