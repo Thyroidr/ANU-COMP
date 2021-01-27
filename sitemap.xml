@@ -4,21 +4,28 @@
   <url>
     <loc>https://thyroidr.github.io/ANU-COMP/Knowledge/Time-Complexity/</loc>
     
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>2021-01-27</lastmod>
     
   </url>
   
   <url>
     <loc>https://thyroidr.github.io/ANU-COMP/categories/</loc>
     
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>2021-01-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://thyroidr.github.io/ANU-COMP/Knowledge/Graph-Theory-Terminologies/</loc>
+    
+    <lastmod>2021-01-24</lastmod>
     
   </url>
   
   <url>
     <loc>https://thyroidr.github.io/ANU-COMP/Resources/COMP1130/</loc>
     
-    <lastmod>2021-01-18</lastmod>
+    <lastmod>2021-01-24</lastmod>
     
   </url>
   
@@ -32,7 +39,7 @@
 
   <url>
     <loc>https://thyroidr.github.io/ANU-COMP</loc>
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>2021-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -42,14 +49,14 @@
   
   <url>
     <loc>https://thyroidr.github.io/ANU-COMP/categories/Resources/</loc>
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>2021-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://thyroidr.github.io/ANU-COMP/categories/Knowledge/</loc>
-    <lastmod>2021-01-23</lastmod>
+    <lastmod>2021-01-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

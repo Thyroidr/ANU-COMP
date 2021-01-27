@@ -29,7 +29,7 @@
 <meta property="og:description" content="Based on Introduction to Algorithms, 3rd Edition, Chapter 3By Ryan Wang AboutIt is often crucial to understand the efficiency of an algorithm. For example, we may have algorithms $A$ and $B$ to solve">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-22T23:37:07.000Z">
-<meta property="article:modified_time" content="2021-01-23T01:56:02.816Z">
+<meta property="article:modified_time" content="2021-01-27T03:49:24.287Z">
 <meta property="article:author" content="Ryan Wang">
 <meta name="twitter:card" content="summary">
 
@@ -193,10 +193,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-23 10:37:07 / Modified: 12:56:02" itemprop="dateCreated datePublished" datetime="2021-01-23T10:37:07+11:00">2021-01-23</time>
+              <time title="Created: 2021-01-23 10:37:07" itemprop="dateCreated datePublished" datetime="2021-01-23T10:37:07+11:00">2021-01-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-27 14:49:24" itemprop="dateModified" datetime="2021-01-27T14:49:24+11:00">2021-01-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -219,11 +225,11 @@
 
       
         <p><em>Based on Introduction to Algorithms, 3rd Edition, Chapter 3</em><br><em>By Ryan Wang</em></p>
-<h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>It is often crucial to understand the efficiency of an algorithm. For example, we may have algorithms $A$ and $B$ to solve a problem. $A$ may slow but easy to implement and its implementations are likely bug-free, while $B$ is fast yet extremely difficult to implement. Knowing an exact measure of their efficiencies can help determining which one to use in different situations. In this example, the we have low demand for efficiency (small data sets), $A$ would be preferred, while $B$ would be ideal with larger data sets.</p>
-<p>We need a quantitative measurement of different situations, and that is often the size of data that we wish to process. This &quot;size of data&quot; is called $n$: it can refer to the number of items in knap-sack, number of data entries in excel, etc. </p>
+<h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>It is often crucial to understand the efficiency of an algorithm. For example, we may have algorithms $A$ and $B$ to solve a problem. $A$ may be slow but easy to implement and its implementations are likely bug-free, while $B$ is fast yet extremely difficult to implement. Knowing an exact measure of their efficiencies can help determine which one to use in different situations. In this example, if we have low demand for efficiency (small data sets), $A$ would be preferred, while $B$ would be ideal for larger data sets.</p>
+<p>We need a quantitative measurement of different situations, and that is often the size of data that we wish to process. This &quot;size of data&quot; is called $n$: it can refer to the number of items in a knapsack, number of data entries in excel, etc. </p>
 <a id="more"></a>
 
-<h2 id="Time-Complexity"><a href="#Time-Complexity" class="headerlink" title="Time Complexity"></a>Time Complexity</h2><p><strong>Time complexity</strong> is notation to describe how efficient an algorithm is in terms of its running time, that is, how long it would run on a computer. Depending on the circumstance, we may use one of three different types of time complexity: upperbound, asymptotic, lowerbound. In each of these cases, we use a function $f(n)$ inside a one of $O()$, $\Theta()$, and $\Omega()$. </p>
+<h2 id="Time-Complexity"><a href="#Time-Complexity" class="headerlink" title="Time Complexity"></a>Time Complexity</h2><p><strong>Time complexity</strong> is a notation to describe how efficient an algorithm is in terms of its running time, that is, how long it would run on a computer. Depending on the circumstances, we may use one of the three different types of time complexity: upperbound, asymptotic, and lowerbound. In each of these cases, we use a function $f(n)$ inside one of $O()$, $\Theta()$, and $\Omega()$. </p>
 <table>
 <thead>
 <tr>
@@ -244,12 +250,12 @@
 <td>Lowerbound</td>
 </tr>
 </tbody></table>
-<h3 id="The-interior-function"><a href="#The-interior-function" class="headerlink" title="The interior function"></a>The interior function</h3><p>I will get into what &quot;upperbound&quot;, &quot;asymptotic&quot;, and &quot;lowerbound&quot; mean in a moment. But first, we will look at $f(n)$. These notations use the function $f(n)$ to describe the rate of growth of algorithmic runtimes. Exact algorithmic runtimes vary significantly from machine to machine, and correspondingly time complexities can only be indicative. Due to this indicative nature, the function $f(n)$ is nearly always simplified by omitting constant factors and minor terms. For example, if we know that the runtime on a machine is exactly</p>
+<h3 id="The-interior-function"><a href="#The-interior-function" class="headerlink" title="The interior function"></a>The interior function</h3><p>Before I get into what &quot;upperbound&quot;, &quot;asymptotic&quot;, and &quot;lowerbound&quot; stand for, we first look at $f(n)$. $f(n)$ describes the rate of growth of algorithmic runtimes. Exact algorithmic runtimes vary significantly from machine to machine, correspondingly time complexities can only be indicative. Due to this indicative nature, the function $f(n)$ is generally simplified by omitting constant factors and minor terms. For example, if we know that the runtime of an algorithm on a machine is exactly</p>
 <p>$$f(n) = 5n^2 + 3n + 2$$</p>
-<p>This is generalised to most machines by simplifying to</p>
+<p>This is generalised to most machines as</p>
 <p>$$f(n) = n^2$$</p>
 <p>In the example above, we know definitively that the $n^2$ term grows faster than the other terms starting from very small $n$. Thus for all $n$ we really care about, it is the dominant term. We may have multiple dominant terms, especially (although not always) in algorithms where the time complexity is determined by multiple variables. One such example is with the infamous Dijkstra&#39;s algorithm for shortest paths in Graph Theory. This algorithm has its run time determined by both the number of vertices ($|V|$) and edges ($|E|$) in the graph. Its time complexity, when implemented using a priority queue for optimisation, is<br>$$O(|E| + |V| \log |V|)$$</p>
-<h3 id="The-three-types-of-time-complexity"><a href="#The-three-types-of-time-complexity" class="headerlink" title="The three types of time complexity"></a>The three types of time complexity</h3><p>Now onto what the $O()$, $\Theta()$ and $\Omega()$ notations mean. Well, they mean what you&#39;d expect. $O()$ gives the hard cap on the time complexity, and that an algo with $O(n^2)$ would never run higher than $n^2$ time complexity, although it could run with $n$ time complexity in certain cases. $\Omega()$ is pretty much the same except with lowerbound, while $\Theta()$ tells you both the upper and lower bounds. </p>
+<h3 id="The-three-types-of-time-complexity"><a href="#The-three-types-of-time-complexity" class="headerlink" title="The three types of time complexity"></a>The three types of time complexity</h3><p>Getting back to what the $O()$, $\Theta()$ and $\Omega()$ notations mean. Well, they mean what you&#39;d expect. $O()$ gives the hard cap on the time complexity, and that an algo with $O(n^2)$ would never run higher than $n^2$ time complexity, although it could run with $n$ time complexity in certain cases. $\Omega()$ is pretty much the same except with lowerbound, while $\Theta()$ tells you both the upper and lower bounds. </p>
 <p>There is one catch though: the runtime only has to obey these bounds after some constant $c$. This constant $c$ can be any number. And thus a function running in $\Theta(n^3)$ for $n \le 1000$ and $\Theta(n^2)$ for $n &gt; 1000$ can still be said to have time complexity $\Theta(n^2)$. This is a rare example, and hardly occurs unless if you &quot;Frankenstein&quot; two algorithms together and have them solve for different sizes of input (I wonder why you would do that hmmm). </p>
 <p>Once again, time complexities are only indicative, optimising a piece of code does not necessarily involve optimising its time complexity. Constant factor optimisation (improving runtime but not changing time complexity) is in fact quite common. </p>
 
@@ -287,7 +293,10 @@
     <a href="/ANU-COMP/Resources/COMP1130/" rel="prev" title="COMP1130">
       <i class="fa fa-chevron-left"></i> COMP1130
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/ANU-COMP/Knowledge/Graph-Theory-Terminologies/" rel="next" title="Graph Theory - What Do We Mean by ___?">
+      Graph Theory - What Do We Mean by ___? <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -362,7 +371,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/ANU-COMP/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -421,7 +430,7 @@
   <span class="author" itemprop="copyrightHolder">Ryan Wang</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div><script color="255,153,102" opacity="0.7" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+  </div><script color="204,51,0" opacity="1.0" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
         
