@@ -21,17 +21,19 @@
     var CONFIG = {"hostname":"thyroidr.github.io","root":"/ANU-COMP/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="By Ryan Wang TODO: Add explanation for more complex terms including but not limited to  AboutIt is impossible to understand Calculus without learning what words like derivative and limit mean. In the">
+  <meta name="description" content="By Ryan Wang AboutIt is impossible to understand Calculus without learning what words like derivative and limit mean. In the same manner, it is unthinkable for one to understand the seemingly abstract">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Graph Theory - What Do We Mean by ___?">
 <meta property="og:url" content="https://thyroidr.github.io/ANU-COMP/Knowledge/Graph-Theory-Terminologies/">
 <meta property="og:site_name" content="ANU-COMP">
-<meta property="og:description" content="By Ryan Wang TODO: Add explanation for more complex terms including but not limited to  AboutIt is impossible to understand Calculus without learning what words like derivative and limit mean. In the">
+<meta property="og:description" content="By Ryan Wang AboutIt is impossible to understand Calculus without learning what words like derivative and limit mean. In the same manner, it is unthinkable for one to understand the seemingly abstract">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/9j23Hsx1fWiIaBu.png">
 <meta property="article:published_time" content="2021-01-24T10:35:39.000Z">
-<meta property="article:modified_time" content="2021-01-24T10:52:24.775Z">
+<meta property="article:modified_time" content="2021-01-27T04:39:59.581Z">
 <meta property="article:author" content="Ryan Wang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/27/9j23Hsx1fWiIaBu.png">
 
 <link rel="canonical" href="https://thyroidr.github.io/ANU-COMP/Knowledge/Graph-Theory-Terminologies/">
 
@@ -193,10 +195,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-24 21:35:39 / Modified: 21:52:24" itemprop="dateCreated datePublished" datetime="2021-01-24T21:35:39+11:00">2021-01-24</time>
+              <time title="Created: 2021-01-24 21:35:39" itemprop="dateCreated datePublished" datetime="2021-01-24T21:35:39+11:00">2021-01-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-27 15:39:59" itemprop="dateModified" datetime="2021-01-27T15:39:59+11:00">2021-01-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -219,9 +227,105 @@
 
       
         <p><em>By Ryan Wang</em></p>
-<p><code>TODO: Add explanation for more complex terms including but not limited to </code></p>
 <h2 id="About"><a href="#About" class="headerlink" title="About"></a>About</h2><p>It is impossible to understand Calculus without learning what words like <code>derivative</code> and <code>limit</code> mean. In the same manner, it is unthinkable for one to understand the seemingly abstract yet highly intuitive field of Graph Theory without learning a glossary of words. Many of the Graph Theory terms are nice and concise, while some others can easily be confusing despite being short in length. This is the guide to terminologies used in Graph Theory. When in doubt, come here. </p>
-<h2 id="The-Basics"><a href="#The-Basics" class="headerlink" title="The Basics"></a>The Basics</h2>
+<a id="more"></a>
+<h2 id="The-Basics"><a href="#The-Basics" class="headerlink" title="The Basics"></a>The Basics</h2><p>A <strong>graph</strong> is made up of <strong>vertices</strong> (nodes, points) connected by <strong>edges</strong> (arcs). Formally, a graph is $G = (V, E)$ where</p>
+<ul>
+<li>$V$ is the set of vertices in graph $G$</li>
+<li>$E$ is the set of edges connecting, each edge is an unordered pair of vertices</li>
+</ul>
+<p>Two vertices $A$ and $B$ are <strong>adjacent</strong> if there exists an edge joining them, that if, there exists edge $e=AB$. $A$ and $B$ are each other&#39;s <strong>neighbour</strong>. From the perspective of the edge $e$, we say that vertices $A$ and $B$ are incident on edge $e$. </p>
+<p>The <strong>order</strong> and <strong>size</strong> of a graph are the number of vertices and edges respectively. That is, $|V|$ is the order and $|E|$ is the size. </p>
+<p>The number of edges a vertex has is called the <strong>degree</strong> of that vertex. The degree of vertex $A$ is denoted by $deg(A)$.</p>
+<p>The <strong>adjacency table</strong> of a graph shows all the edges. It has the vertices listed on its first row and first column. Other cells indicate how many edges connect a pair of vertices (the pair on the corresponding row and column). All of the cells in a row or column can be summed to give the degree of the vertex for that row or column. Although this method of showing a graph is quite intuitive, it scales horribly for larger graphs (who wants to see a $1000\times1000$ table?). </p>
+<p>An alternative to the adjacency table is the <strong>adjacency list</strong>. This method of showing a graph has all the vertices listed on the first column, and all the adjacent vertices listed on the second column. This is very often how graphs are stored in a computer. </p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p><img src="https://i.loli.net/2021/01/27/9j23Hsx1fWiIaBu.png" alt="A.png"></p>
+<center>Graph A</center>
+
+<p>The graph above has an order of 5, a size of 6, and its vertices in numerical order have degrees of ${3, 2, 4, 2, 1}$. Its adjacent table and adjacency list are shown below.</p>
+<p>Adjacency Table: </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>Adjacency List:</p>
+<table>
+<thead>
+<tr>
+<th>Vertex</th>
+<th>Neighbours</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>1, 2, 3</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0, 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0， 1， 3， 4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0， 2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+</tr>
+</tbody></table>
+
     </div>
 
     
@@ -315,7 +419,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#About"><span class="nav-number">1.</span> <span class="nav-text">About</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Basics"><span class="nav-number">2.</span> <span class="nav-text">The Basics</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#About"><span class="nav-number">1.</span> <span class="nav-text">About</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Basics"><span class="nav-number">2.</span> <span class="nav-text">The Basics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">2.1.</span> <span class="nav-text">Example</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
